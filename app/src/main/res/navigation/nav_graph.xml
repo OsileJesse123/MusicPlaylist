@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/songsFragment"
+    >
+
+    <fragment
+        android:id="@+id/songsFragment"
+        android:name="com.jesse.musicplaylist.screens.songs.SongsFragment"
+        android:label="@string/songs_label"
+        tools:layout="@layout/fragment_songs">
+        <action
+            android:id="@+id/action_playlistFragment_to_playlistSongsFragment"
+            app:destination="@id/playlistSongsFragment"
+            />
+        <action
+            android:id="@+id/action_playlistSongsFragment_to_addSongActivity"
+            app:destination="@id/addSongActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/playlistFragment"
+        android:name="com.jesse.musicplaylist.screens.playlist.PlaylistFragment"
+        android:label="@string/playlist_label"
+        tools:layout="@layout/fragment_playlist" >
+        <action
+            android:id="@+id/action_playlistFragment_to_playlistSongsFragment"
+            app:destination="@id/playlistSongsFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/playlistSongsFragment"
+        android:name="com.jesse.musicplaylist.screens.playlist_songs.PlaylistSongsFragment"
+        android:label="@string/playlist_songs_label"
+        tools:layout="@layout/playlist_songs_fragment">
+
+        <argument
+            android:name="playlist_Uid"
+            app:argType="integer"
+            android:defaultValue="0"
+            />
+        <argument
+            android:name="playlist_name"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true"
+            />
+        <action
+            android:id="@+id/action_playlistSongsFragment_to_addSongActivity"
+            app:destination="@id/addSongActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/addSongActivity"
+        android:name="com.jesse.musicplaylist.screens.add_song.AddSongActivity"
+        android:label="@string/add_song_label"
+        tools:layout="@layout/add_song_activity">
+
+        <argument
+            android:name="playlist_uid"
+            app:argType="integer"
+            android:defaultValue="0"
+            />
+    </activity>
+    <activity
+        android:id="@+id/searchActivity"
+        android:name="com.jesse.musicplaylist.screens.search.SearchActivity"
+        android:label="@string/search"
+        tools:layout="@layout/search_activity" />
+</navigation>
