@@ -21,7 +21,7 @@ class MainActivityTest {
     @Test
     fun test_navigateToPlaylistFragmentThenBackToSongsFragment(){
         //Launch MainActivity
-        activityScenarioRule.scenario
+        val scenario = activityScenarioRule.scenario
 
         //Navigate between both fragments
         onView(withId(R.id.bottom_nav)).perform(ClickOnImageView(R.id.playlistFragment))
@@ -31,7 +31,7 @@ class MainActivityTest {
     @Test
     fun test_searchForSongOrArtist(){
         //Launch MainActivity
-        activityScenarioRule.scenario
+        val scenario = activityScenarioRule.scenario
         val artistName = "CKay"
 
         //Search for Artist

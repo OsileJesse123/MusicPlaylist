@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/alert_dialog_card"
+    app:cardBackgroundColor="@color/light_black"
+    android:theme="@style/Theme.MaterialComponents"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/alert_dialog_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp">
+
+        <ImageView
+            android:id="@+id/alert_dialog_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/playlist_icon"
+            android:src="@drawable/ic_library_music"
+            app:layout_constraintBottom_toTopOf="@+id/playlist_name_et"
+            app:layout_constraintEnd_toStartOf="@+id/alert_dialog_title"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/alert_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_new_playlist"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/playlist_name_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/alert_dialog_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/playlist_name_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playlist_edittext_bg"
+            android:hint="@string/please_enter_playlist_title"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="7dp"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/cancel"
+            android:textColor="@color/bright_purple"
+            app:layout_constraintEnd_toStartOf="@+id/save_btn"
+            app:layout_constraintStart_toStartOf="@+id/playlist_name_et"
+            app:layout_constraintTop_toBottomOf="@+id/playlist_name_et" />
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/save"
+            android:textColor="@color/background_purple"
+            app:backgroundTint="@color/bright_purple"
+            app:layout_constraintEnd_toEndOf="@+id/playlist_name_et"
+            app:layout_constraintStart_toEndOf="@+id/cancel_btn"
+            app:layout_constraintTop_toBottomOf="@+id/playlist_name_et" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
