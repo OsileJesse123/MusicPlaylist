@@ -7,7 +7,6 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.jesse.musicplaylist.ClickOnImageView
-import com.jesse.musicplaylist.MainActivity
 import com.jesse.musicplaylist.R
 import org.junit.Rule
 import org.junit.Test
@@ -22,7 +21,7 @@ class MainActivityTest {
     @Test
     fun test_navigateToPlaylistFragmentThenBackToSongsFragment(){
         //Launch MainActivity
-        val scenario = activityScenarioRule.scenario
+        activityScenarioRule.scenario
 
         //Navigate between both fragments
         onView(withId(R.id.bottom_nav)).perform(ClickOnImageView(R.id.playlistFragment))
@@ -32,7 +31,7 @@ class MainActivityTest {
     @Test
     fun test_searchForSongOrArtist(){
         //Launch MainActivity
-        val scenario = activityScenarioRule.scenario
+        activityScenarioRule.scenario
         val artistName = "CKay"
 
         //Search for Artist

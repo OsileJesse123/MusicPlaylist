@@ -1,27 +1,31 @@
-package com.jesse.musicplaylist
+package com.jesse.musicplaylist.screens
 
 import android.app.SearchManager
 import android.content.ComponentName
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.jesse.musicplaylist.R
 import com.jesse.musicplaylist.data.SongPlaylistDatabase
 import com.jesse.musicplaylist.databinding.ActivityMainBinding
 import com.jesse.musicplaylist.screens.search.SearchActivity
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val songPlaylistDatabase: SongPlaylistDatabase by lazy {
-        SongPlaylistDatabase.getInstance(this)
-    }
+    @Inject lateinit var songPlaylistDatabase: SongPlaylistDatabase
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

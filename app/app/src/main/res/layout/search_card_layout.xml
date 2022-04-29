@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_card"
+    app:cardBackgroundColor="@color/background_purple">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_card_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="5dp"
+        >
+
+        <ImageView
+            android:id="@+id/search_card_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            android:contentDescription="@string/search_result_icon"
+            app:layout_constraintHorizontal_bias=".08"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/search_song_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/song_artist_text"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias=".2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/search_card_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/search_song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/love_nwantiti"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias=".01"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/search_card_icon"
+            app:layout_constraintTop_toBottomOf="@+id/search_song_artist" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
